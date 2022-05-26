@@ -1,20 +1,3 @@
-//This is the javascript file that controls the sudoku program
-//I have tried my best to code the entire project using classes as I felt an
-//object-oriented aproach would be the most efficient
-
-//The point of this program was for me to learn how to animate with javascript and also
-//to explore further reccursion in javascript, I have been researching a lot about recursion
-//over the past few months and I find it extreemly interesting
-
-//The sudoku boards are solved using the recursive backtracking algorithm which attempts to fill each
-//cell starting with the number 1, when it finds a number that fits it moves to the next cell, if you
-//reach 9 then one of the previous cells has the wrong number so it goes back
-
-//this program called for me to properly learn how async functions worked and has helped me gain
-//a far greater understanding of how the language works as a whole
-
-//cell objects refer to the individual cells of the sudoku board, using an object allowed me to
-//refrence the div and data about the cell simultaneously which helped a lot with the work flow
 class cellObject {
   constructor(row, position) {
     this.div = "";
@@ -36,8 +19,6 @@ class cellObject {
   }
 }
 
-//I found that the easiest way to code this project was to have a sudoku board class and then for the
-//program to interact with board objects
 class SudokuBoard {
   constructor(values) {
     this.boardElement = document.querySelector(".board");
@@ -53,8 +34,6 @@ class SudokuBoard {
     });
     this.values = valuesBoard;
     this.mistakeTally = 0;
-    //this.board allows me to store all of the cell objects in the board in a format that
-    //has been easily accessible for me when coding
     this.board = [];
     this.rows;
     this.selectedCell;
@@ -211,8 +190,6 @@ class SudokuBoard {
     }
   }
 
-  //enter pressed is used to turn notes into full numbers, and checks if that number is allowed in said position
-  //according to the rules of sudoku
   enterPressed() {
     if (typeof this.selectedCell != "undefined") {
       if (
